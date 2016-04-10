@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC00B3401CB0EB2C006E1BF1 /* TableInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC00B33F1CB0EB2C006E1BF1 /* TableInterfaceController.swift */; };
+		DC00B3421CB0EB48006E1BF1 /* TableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC00B3411CB0EB48006E1BF1 /* TableRow.swift */; };
+		DC00B3441CB0EF9E006E1BF1 /* DetailsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC00B3431CB0EF9E006E1BF1 /* DetailsInterfaceController.swift */; };
+		DC00B3461CB0F22D006E1BF1 /* stadium.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC00B3451CB0F22D006E1BF1 /* stadium.swift */; };
+		DC00B3481CB0F287006E1BF1 /* stadiumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC00B3471CB0F287006E1BF1 /* stadiumManager.swift */; };
+		DCA226BA1CB166B10009F11A /* stadium.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC00B3451CB0F22D006E1BF1 /* stadium.swift */; };
+		DCA226BB1CB166B50009F11A /* stadiumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC00B3471CB0F287006E1BF1 /* stadiumManager.swift */; };
+		DCA226BD1CB1670B0009F11A /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA226BC1CB1670B0009F11A /* DetailsViewController.swift */; };
 		DCFA1C711CA8A0BC0053FDCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1C701CA8A0BC0053FDCC /* AppDelegate.swift */; };
 		DCFA1C731CA8A0BC0053FDCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1C721CA8A0BC0053FDCC /* ViewController.swift */; };
 		DCFA1C761CA8A0BC0053FDCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1C741CA8A0BC0053FDCC /* Main.storyboard */; };
@@ -67,6 +75,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DC00B33F1CB0EB2C006E1BF1 /* TableInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableInterfaceController.swift; sourceTree = "<group>"; };
+		DC00B3411CB0EB48006E1BF1 /* TableRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRow.swift; sourceTree = "<group>"; };
+		DC00B3431CB0EF9E006E1BF1 /* DetailsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsInterfaceController.swift; sourceTree = "<group>"; };
+		DC00B3451CB0F22D006E1BF1 /* stadium.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stadium.swift; sourceTree = "<group>"; };
+		DC00B3471CB0F287006E1BF1 /* stadiumManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stadiumManager.swift; sourceTree = "<group>"; };
+		DC921CC31CB182B400AF6858 /* baseballgames.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = baseballgames.entitlements; sourceTree = "<group>"; };
+		DCA226BC1CB1670B0009F11A /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		DCFA1C6D1CA8A0BC0053FDCC /* baseballgames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = baseballgames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCFA1C701CA8A0BC0053FDCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCFA1C721CA8A0BC0053FDCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,10 +122,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DCA226B91CB1669D0009F11A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DC00B3451CB0F22D006E1BF1 /* stadium.swift */,
+				DC00B3471CB0F287006E1BF1 /* stadiumManager.swift */,
+			);
+			name = Shared;
+			path = "baseballgames WatchKit Extension";
+			sourceTree = "<group>";
+		};
 		DCFA1C641CA8A0BC0053FDCC = {
 			isa = PBXGroup;
 			children = (
 				DCFA1C6F1CA8A0BC0053FDCC /* baseballgames */,
+				DCA226B91CB1669D0009F11A /* Shared */,
 				DCFA1C831CA8A0BC0053FDCC /* baseballgames WatchKit App */,
 				DCFA1C921CA8A0BC0053FDCC /* baseballgames WatchKit Extension */,
 				DCFA1C6E1CA8A0BC0053FDCC /* Products */,
@@ -130,12 +156,14 @@
 		DCFA1C6F1CA8A0BC0053FDCC /* baseballgames */ = {
 			isa = PBXGroup;
 			children = (
+				DC921CC31CB182B400AF6858 /* baseballgames.entitlements */,
 				DCFA1C701CA8A0BC0053FDCC /* AppDelegate.swift */,
 				DCFA1C721CA8A0BC0053FDCC /* ViewController.swift */,
 				DCFA1C741CA8A0BC0053FDCC /* Main.storyboard */,
 				DCFA1C771CA8A0BC0053FDCC /* Assets.xcassets */,
 				DCFA1C791CA8A0BC0053FDCC /* LaunchScreen.storyboard */,
 				DCFA1C7C1CA8A0BC0053FDCC /* Info.plist */,
+				DCA226BC1CB1670B0009F11A /* DetailsViewController.swift */,
 			);
 			path = baseballgames;
 			sourceTree = "<group>";
@@ -161,6 +189,9 @@
 				DCFA1C9F1CA8A0BC0053FDCC /* Assets.xcassets */,
 				DCFA1CA11CA8A0BC0053FDCC /* Info.plist */,
 				DCFA1C931CA8A0BC0053FDCC /* Supporting Files */,
+				DC00B33F1CB0EB2C006E1BF1 /* TableInterfaceController.swift */,
+				DC00B3411CB0EB48006E1BF1 /* TableRow.swift */,
+				DC00B3431CB0EF9E006E1BF1 /* DetailsInterfaceController.swift */,
 			);
 			path = "baseballgames WatchKit Extension";
 			sourceTree = "<group>";
@@ -241,6 +272,12 @@
 				TargetAttributes = {
 					DCFA1C6C1CA8A0BC0053FDCC = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 8A7CJD8DZ6;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					DCFA1C7E1CA8A0BC0053FDCC = {
 						CreatedOnToolsVersion = 7.3;
@@ -306,7 +343,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCFA1C731CA8A0BC0053FDCC /* ViewController.swift in Sources */,
+				DCA226BB1CB166B50009F11A /* stadiumManager.swift in Sources */,
 				DCFA1C711CA8A0BC0053FDCC /* AppDelegate.swift in Sources */,
+				DCA226BA1CB166B10009F11A /* stadium.swift in Sources */,
+				DCA226BD1CB1670B0009F11A /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,11 +354,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC00B3401CB0EB2C006E1BF1 /* TableInterfaceController.swift in Sources */,
 				DCFA1C9A1CA8A0BC0053FDCC /* NotificationController.swift in Sources */,
+				DC00B3421CB0EB48006E1BF1 /* TableRow.swift in Sources */,
+				DC00B3481CB0F287006E1BF1 /* stadiumManager.swift in Sources */,
 				DCFA1C981CA8A0BC0053FDCC /* ExtensionDelegate.swift in Sources */,
+				DC00B3441CB0EF9E006E1BF1 /* DetailsInterfaceController.swift in Sources */,
 				DCFA1C9E1CA8A0BC0053FDCC /* ComplicationController.swift in Sources */,
 				DCFA1C961CA8A0BC0053FDCC /* InterfaceController.swift in Sources */,
 				DCFA1C9C1CA8A0BC0053FDCC /* GlanceController.swift in Sources */,
+				DC00B3461CB0F22D006E1BF1 /* stadium.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +559,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = baseballgames/baseballgames.entitlements;
 				INFOPLIST_FILE = baseballgames/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.claudiusmbemba.baseballgames;
@@ -525,6 +571,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = baseballgames/baseballgames.entitlements;
 				INFOPLIST_FILE = baseballgames/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.claudiusmbemba.baseballgames;
@@ -551,6 +598,7 @@
 				DCFA1CA61CA8A0BC0053FDCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DCFA1CA81CA8A0BC0053FDCC /* Build configuration list for PBXNativeTarget "baseballgames WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -559,6 +607,7 @@
 				DCFA1CAA1CA8A0BC0053FDCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DCFA1CAC1CA8A0BC0053FDCC /* Build configuration list for PBXNativeTarget "baseballgames" */ = {
 			isa = XCConfigurationList;
@@ -567,6 +616,7 @@
 				DCFA1CAE1CA8A0BC0053FDCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

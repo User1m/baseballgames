@@ -1,26 +1,188 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6724" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="baseballgames_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" text="This ia a Label" id="3OM-Ur-DPN"/>
+                        <group width="1" alignment="left" id="BH7-Md-tya">
+                            <items>
+                                <button width="0.5" alignment="left" title="&lt;&lt;" id="qpz-VJ-SfZ"/>
+                                <button width="0.5" alignment="left" title="&gt;&gt;" id="W0C-xW-Of3">
+                                    <connections>
+                                        <segue destination="S6J-5q-NQJ" kind="push" id="Ug7-2Y-ihZ"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="50" alignment="left" id="NYw-rM-gxI">
+                            <items>
+                                <imageView width="0.29999999999999999" height="1" alignment="left" image="baseball" id="qub-Xy-TxQ"/>
+                                <label alignment="left" verticalAlignment="center" text="Baseball" id="4qp-qY-H7T"/>
+                            </items>
+                        </group>
+                        <switch width="1" alignment="left" title="On/Off" id="GYY-cl-z89">
+                            <connections>
+                                <action selector="switchSendData:" destination="AgC-eL-Hgc" id="TZF-PR-6TE"/>
+                            </connections>
+                        </switch>
+                        <picker height="50" alignment="left" focusStyle="sequence" id="f6w-Uh-Dyd">
+                            <connections>
+                                <action selector="pickerChanged:" destination="AgC-eL-Hgc" id="4yg-W9-leA"/>
+                            </connections>
+                        </picker>
+                    </items>
+                    <menu key="menu" id="caw-yG-h5D">
+                        <items>
+                            <menuItem title="Stadiums" icon="more" id="lQN-V0-age">
+                                <connections>
+                                    <action selector="stadiumsForceTouch" destination="AgC-eL-Hgc" id="onP-sT-5Qx"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Upcoming" icon="info" id="o0t-Xd-m2V">
+                                <connections>
+                                    <action selector="upcomingForceTouch" destination="AgC-eL-Hgc" id="k0M-Wr-Q9R"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Opposing Teams" icon="trash" id="DoK-nV-jHw">
+                                <connections>
+                                    <action selector="opposingForceTouch" destination="AgC-eL-Hgc" id="gO5-vJ-cXo"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Test" icon="add" id="RBl-Ex-qoY">
+                                <connections>
+                                    <action selector="testForceTouch" destination="AgC-eL-Hgc" id="elw-gl-s0g"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="picker" destination="f6w-Uh-Dyd" id="1YM-Kf-8Dn"/>
+                        <outlet property="teamLabel" destination="4qp-qY-H7T" id="CIt-xg-6rh"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="235" y="347"/>
+            <point key="canvasLocation" x="235" y="311.75"/>
+        </scene>
+        <!--Table Interface Controller-->
+        <scene sceneID="RuH-Ob-tMs">
+            <objects>
+                <controller id="S6J-5q-NQJ" customClass="TableInterfaceController" customModule="baseballgames_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="coh-yq-bJn">
+                            <items>
+                                <tableRow identifier="row" id="OsK-Si-aH1" customClass="TableRow" customModule="baseballgames_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="98h-c8-QMM">
+                                        <items>
+                                            <label alignment="left" text="Label" id="KZq-gh-ouq"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="rowLabel" destination="KZq-gh-ouq" id="ORw-PS-jc9"/>
+                                        <segue destination="8BY-v5-5uz" kind="push" identifier="details" id="trw-hc-GEZ"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="coh-yq-bJn" id="ycQ-UH-kdf"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="492" y="285"/>
+        </scene>
+        <!--Details Interface Controller-->
+        <scene sceneID="SVh-X2-fY3">
+            <objects>
+                <controller id="8BY-v5-5uz" customClass="DetailsInterfaceController" customModule="baseballgames_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="tkO-zb-6Uj">
+                            <items>
+                                <label alignment="left" text="Team:" id="oAV-3k-fZK">
+                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                </label>
+                                <label alignment="right" text="Label" id="SdP-tI-Sbe"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="g2K-PH-0iS">
+                            <items>
+                                <label alignment="left" text="City:" id="q6m-Hs-mrX">
+                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                </label>
+                                <label alignment="right" text="Label" id="ALe-Rh-Mta"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="Bg3-ld-syR">
+                            <items>
+                                <label alignment="left" text="Game Day:" id="198-ky-pqt">
+                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                </label>
+                                <label alignment="right" text="Label" id="QSi-1e-0sU"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="M3N-9J-Nlq">
+                            <items>
+                                <label alignment="left" text="Vs:" id="Wbw-0J-Jz2">
+                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                </label>
+                                <label alignment="right" text="Label" id="UWu-6h-Hvg"/>
+                            </items>
+                        </group>
+                        <imageView width="0.5" height="0.5" alignment="center" verticalAlignment="center" image="baseball" id="XxT-LV-PJz"/>
+                    </items>
+                    <connections>
+                        <outlet property="cityLabel" destination="ALe-Rh-Mta" id="9PR-1W-ewv"/>
+                        <outlet property="gameDateLabel" destination="QSi-1e-0sU" id="XZd-F3-ZgK"/>
+                        <outlet property="image" destination="XxT-LV-PJz" id="lUN-Oc-kQM"/>
+                        <outlet property="nameLabel" destination="SdP-tI-Sbe" id="gPY-j0-AAY"/>
+                        <outlet property="opponentLabel" destination="UWu-6h-Hvg" id="5AI-gZ-P6G"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="762" y="285"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
             <objects>
-                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModuleProvider="target">
+                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="baseballgames_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group alignment="left" id="t8f-Gd-c4y"/>
-                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                        <group alignment="left" id="t8f-Gd-c4y">
+                            <items>
+                                <label width="1" alignment="left" text="Label" numberOfLines="2" id="Ccp-6S-nCC">
+                                    <fontDescription key="font" type="boldSystem" pointSize="20"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group alignment="left" layout="vertical" id="uCw-4Q-Ouw">
+                            <items>
+                                <group width="1" alignment="left" id="C1y-6q-2ch">
+                                    <items>
+                                        <label alignment="left" text="Label" id="UfG-2T-7YG">
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                        </label>
+                                        <label alignment="right" text="Label" id="Nbq-Kp-s2e">
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <imageView width="0.29999999999999999" height="0.5" alignment="left" image="baseball" id="K9G-4f-Kli"/>
+                            </items>
+                        </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="image" destination="K9G-4f-Kli" id="EJn-H9-Y72"/>
+                        <outlet property="playDateLabel" destination="Nbq-Kp-s2e" id="XAG-8F-fd3"/>
+                        <outlet property="stadiumLabel" destination="Ccp-6S-nCC" id="GNT-1h-mSU"/>
+                        <outlet property="teamLbl" destination="UfG-2T-7YG" id="1pR-xG-MH1"/>
+                    </connections>
                 </glanceController>
             </objects>
             <point key="canvasLocation" x="235" y="672"/>
@@ -44,7 +206,14 @@
         <!--Notification Controller-->
         <scene sceneID="KIl-fV-djm">
             <objects>
-                <controller id="gdX-wl-uQE" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="baseballgames_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" text="Label" id="aAe-9M-vui"/>
+                    </items>
+                    <connections>
+                        <outlet property="testLabel" destination="aAe-9M-vui" id="BgE-mr-mai"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="553" y="1001"/>
         </scene>
